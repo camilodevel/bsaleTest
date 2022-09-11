@@ -1,5 +1,6 @@
 body{
     background: #f1f1f1;
+    font-family: 'Inter', sans-serif;
 }
 
 .navContainer{
@@ -7,6 +8,43 @@ body{
     box-shadow: 1px 2px 4px rgb(0 0 0 / 40%);
     background: #ffffff;
     height: 80px;
+
+    display: flex;
+    /* padding: 10px 10px; */
+    width: 100%;
+}
+
+.tituloNav{
+    width: 25%;
+
+    font-size: 30px;
+    text-align: center;
+    align-self: center;
+    color: #797979;
+}
+
+.buscar{
+    width: 50%;
+    height: 43px;
+    margin: auto;
+    border-radius: 25px;
+    font-size: 16px;
+    padding: 0 20px;
+}
+
+.buscar::placeholder{
+    font-size: 16px;
+}
+
+.iconosNav{
+    align-self: center;
+    width: 25%;
+}
+
+.iconoBuscar{
+    margin-left: 10px;
+    font-size: 20px;
+    color: #797979;
 }
 
 .container{
@@ -20,6 +58,7 @@ body{
     max-width: 800px;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     place-content: space-between;
 }
 
@@ -28,6 +67,7 @@ body{
     box-shadow: 0px 3px 5px 0px rgb(0 0 0 / 40%);
     width: 21%;
     height: 300px;
+    margin-bottom: 15px;
     background: #ffffff;
 }
 
@@ -41,11 +81,23 @@ body{
     width: 100%;
 }
 
+.nombre{
+    font-size: 14px;
+    color: #797979;;
+}
+
 .cardInferior{
     display: flex;
 }
 
-.itemEspacioInferior{
-    width: 50%;
+.precio{
+    width: 75%;
+    align-self: center;
+    color: #9b9b9b;
+}
+
+.iconoCarrito{
+    width: 25%;
+    font-size: 30px;
 }
 
