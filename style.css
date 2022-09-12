@@ -4,7 +4,10 @@ body{
 }
 
 .navContainer{
-    position: relative;
+    position: fixed;
+    top: 0px;
+    z-index: 12;
+    /* position: relative; */
     box-shadow: 1px 2px 4px rgb(0 0 0 / 40%);
     background: #ffffff;
     height: 80px;
@@ -59,7 +62,7 @@ body{
 }
 
 .container{
-    margin-top: 20px;
+    margin-top: 109px;
     height: 800px;
     background: #f1f1f1;
 }
