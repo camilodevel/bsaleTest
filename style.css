@@ -124,6 +124,10 @@ body{
     font-size: 30px;
 }
 
+.iconoCarrito:hover{
+    color: rgb(141, 180, 43);
+}
+
 @media (max-width: 800px) {
     .img{
         max-width: 200px;
