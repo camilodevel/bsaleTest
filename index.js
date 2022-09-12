@@ -1,4 +1,5 @@
-let API_URL = 'http://localhost:5000/bsaletest/v1/products/';
+// let API_URL = 'http://localhost:5000/bsaletest/v1/products/';
+let API_URL = 'https://backend-bsaletest.herokuapp.com/bsaletest/v1/products/';
 const HTMLResponse = document.querySelector("#cardsTemplate");
 
 let productos = []
