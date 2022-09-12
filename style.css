@@ -23,6 +23,10 @@ body{
     color: #797979;
 }
 
+.tituloNavMin{
+    display: none;
+}
+
 .buscar{
     width: 50%;
     height: 43px;
@@ -30,6 +34,13 @@ body{
     border-radius: 25px;
     font-size: 16px;
     padding: 0 20px;
+}
+
+.noEncontrado{
+    padding: 20px;
+    background: #525252;
+    color: white;
+    font-size: 22px;
 }
 
 .buscar::placeholder{
@@ -54,19 +65,18 @@ body{
 }
 
 .cardsContainer{
-    width: 800px;
     max-width: 800px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    place-content: space-between;
+    place-content: space-around;
 }
 
 .cards{
     padding: 10px;
     box-shadow: 0px 3px 5px 0px rgb(0 0 0 / 40%);
     width: 21%;
-    height: 300px;
+    min-height: 300px;
     margin-bottom: 15px;
     background: #ffffff;
 }
@@ -75,6 +85,13 @@ body{
     height: 80%;
     place-content: space-between;
     display: grid;
+    position: relative;
+}
+
+.imgContain{
+    width: 100%;
+    position: absolute;
+    text-align: center;
 }
 
 .img{
@@ -83,7 +100,10 @@ body{
 
 .nombre{
     font-size: 14px;
-    color: #797979;;
+    color: #797979;
+
+    position: absolute;
+    bottom: 15px;
 }
 
 .cardInferior{
@@ -101,3 +121,40 @@ body{
     font-size: 30px;
 }
 
+@media (max-width: 800px) {
+    .img{
+        max-width: 200px;
+    }
+    .cards{
+        width: 35%;
+    }
+}
+
+@media (max-width: 600px) {
+    .cards{
+        width: 66%;
+    }
+
+    .tituloNav {
+        display: none;
+    }
+
+    .tituloNavMin{
+        display: block;
+        width: 25%;
+    
+        font-size: 30px;
+        text-align: center;
+        align-self: center;
+        color: #797979;
+    }
+
+    /* .tituloNav {
+        content: none;
+        visibility: hidden;
+    }
+    .tituloNav::after {
+        content: "BT";
+        visibility: visible;
+    } */
+}
