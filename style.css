@@ -13,6 +13,7 @@ body{
     height: 80px;
 
     display: flex;
+    flex-wrap: wrap;
     /* padding: 10px 10px; */
     width: 100%;
 }
@@ -26,6 +27,9 @@ body{
     color: #797979;
 }
 
+.select{
+    margin: auto;
+}
 .tituloNavMin{
     display: none;
 }
@@ -52,7 +56,7 @@ body{
 
 .iconosNav{
     align-self: center;
-    width: 25%;
+    width: 20%;
 }
 
 .iconoBuscar{
@@ -149,7 +153,7 @@ body{
 
     .tituloNavMin{
         display: block;
-        width: 25%;
+        width: 15%;
     
         font-size: 30px;
         text-align: center;

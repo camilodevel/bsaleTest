@@ -1,6 +1,8 @@
 // let API_URL = 'http://localhost:5000/bsaletest/v1/products/';
 let API_URL = 'https://backend-bsaletest.herokuapp.com/bsaletest/v1/products/';
-const HTMLResponse = document.querySelector("#cardsTemplate");
+const HTMLResponse      = document.querySelector("#cardsTemplate");
+const optionsTemplate   = document.querySelector("#optionsTemplate");
+
 
 let productos = []
 
@@ -13,6 +15,32 @@ function mostrarProductos(){
             productos = data;
             
     });
+}
+
+// Funcion para llamar las categorias
+function mostrarCatgorias(){
+    fetch(API_URL+"todas/categorias/")
+        .then(response => response.json())
+        .then(data => {
+            llenarSelect(data);
+                        
+    });
+}
+
+// funcion para llenar select
+
+function llenarSelect(data){
+    optionsTemplate.innerHTML = "";
+
+    if(data.length === 0){
+        const mensaje = '<option value="vacio">No se encuentran las categorias</option>'
+        optionsTemplate.innerHTML = mensaje;
+    }else{
+        optionsTemplate.innerHTML +=  `<option value="10">Todas</option>`
+        for(let cat of data){
+            tplOption(cat)
+        }
+    }
 }
 
 // Funcion para validar como llegan los productos
@@ -54,6 +82,28 @@ function tplCard(prod){
                 </div>`
 }
 
+// Aqui se crean las opciones de forma dinamica
+function tplOption(cat){
+    optionsTemplate.innerHTML +=  `<option value="${cat.id}">${cat.name}</option>`
+}
+
+function cargarPorCategoria(e){
+    var select = document.getElementById('optionsTemplate');
+    const id = parseInt(select.value);
+    if(id ===10){
+        mostrarProductos();
+        return;
+    }
+    fetch(API_URL+"buscar/categoria/"+id)
+        .then(response => response.json())
+        .then(data => {
+            imprimirCards(data);
+                        
+    });
+
+}
+
+
 // Funcion para buscar productos.
 function buscar(e){
     const palabra = document.getElementById("palabra").value
@@ -69,3 +119,4 @@ function buscar(e){
 }
 
 mostrarProductos();
+mostrarCatgorias();
